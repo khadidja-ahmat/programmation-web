@@ -23,7 +23,3 @@ Il suffit d'ouvrir le fichier HTML dans un navigateur :
 - `TD1/index.html`
 - `TD2/bj.html`
 - `TD3/index.html` (nécessite une connexion internet)
-
-## Licence
-
-Travaux réalisés dans le cadre d'un cours, publiés à titre de démonstration. Tous droits réservés.
