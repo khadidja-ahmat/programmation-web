@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Application météo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="weather.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 16px;
+        }
+        #menu {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        #menu input {
+            flex: 1;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #menu button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        #data {
+            margin-top: 16px;
+        }
+        .actuel {
+            font-size: 18px;
+        }
+        .actuel .gros {
+            font-size: 48px;
+        }
+        .previsions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .jour {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: center;
+            min-width: 90px;
+        }
+        .erreur {
+            color: #b00020;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <input type="text" placeholder="Entre une ville (ex : Bordeaux) ou clique sur la carte">
+        <button type="button">afficher</button>
+    </div>
+    <div id="map"></div>
+    <div id="data"></div>
+</body>
+</html>
