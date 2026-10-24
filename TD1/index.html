@@ -1,42 +1,808 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Carte de jeu</title>
+    <title>Jeu de 52 cartes</title>
 
+    <!-- Lien vers le fichier CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="card">
-            <div class="top">A ♠</div>
-            <div class="center figure">♠</div>
-            <div class="bottom"> A ♠</div>
+
+    <!-- Les 52 cartes du jeu, puis le dos de la carte -->
+    <div class="jeu">
+
+        <!-- ===== Cartes de pique ===== -->
+        <!-- As de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                A ♠
+            </div>
+
+            <div class="center figure">
+                ♠
+            </div>
+
+            <div class="bottom">
+                A ♠
+            </div>
+        </div>
+
+        <!-- 2 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                2 ♠
+            </div>
+
+            <div class="center number">
+                2 ♠
+            </div>
+
+            <div class="bottom">
+                2 ♠
+            </div>
+        </div>
+
+        <!-- 3 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                3 ♠
+            </div>
+
+            <div class="center number">
+                3 ♠
+            </div>
+
+            <div class="bottom">
+                3 ♠
+            </div>
+        </div>
+
+        <!-- 4 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                4 ♠
+            </div>
+
+            <div class="center number">
+                4 ♠
+            </div>
+
+            <div class="bottom">
+                4 ♠
+            </div>
+        </div>
+
+        <!-- 5 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                5 ♠
+            </div>
+
+            <div class="center number">
+                5 ♠
+            </div>
+
+            <div class="bottom">
+                5 ♠
+            </div>
+        </div>
+
+        <!-- 6 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                6 ♠
+            </div>
+
+            <div class="center number">
+                6 ♠
+            </div>
+
+            <div class="bottom">
+                6 ♠
+            </div>
+        </div>
+
+        <!-- 7 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                7 ♠
+            </div>
+
+            <div class="center number">
+                7 ♠
+            </div>
+
+            <div class="bottom">
+                7 ♠
+            </div>
+        </div>
+
+        <!-- 8 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                8 ♠
+            </div>
+
+            <div class="center number">
+                8 ♠
+            </div>
+
+            <div class="bottom">
+                8 ♠
+            </div>
+        </div>
+
+        <!-- 9 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                9 ♠
+            </div>
+
+            <div class="center number">
+                9 ♠
+            </div>
+
+            <div class="bottom">
+                9 ♠
+            </div>
+        </div>
+
+        <!-- 10 de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                10 ♠
+            </div>
+
+            <div class="center number">
+                10 ♠
+            </div>
+
+            <div class="bottom">
+                10 ♠
+            </div>
+        </div>
+
+        <!-- Valet de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                J ♠
+            </div>
+
+            <div class="center figure">
+                J
+            </div>
+
+            <div class="bottom">
+                J ♠
+            </div>
+        </div>
+
+        <!-- Dame de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                Q ♠
+            </div>
+
+            <div class="center figure">
+                Q
+            </div>
+
+            <div class="bottom">
+                Q ♠
+            </div>
+        </div>
+
+        <!-- Roi de pique -->
+        <div class="card card-front black">
+            <div class="top">
+                K ♠
+            </div>
+
+            <div class="center figure">
+                K
+            </div>
+
+            <div class="bottom">
+                K ♠
+            </div>
+        </div>
+
+        <!-- ===== Cartes de cœur ===== -->
+        <!-- As de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                A ♥
+            </div>
+
+            <div class="center figure">
+                ♥
+            </div>
+
+            <div class="bottom">
+                A ♥
+            </div>
+        </div>
+
+        <!-- 2 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                2 ♥
+            </div>
+
+            <div class="center number">
+                2 ♥
+            </div>
+
+            <div class="bottom">
+                2 ♥
+            </div>
+        </div>
+
+        <!-- 3 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                3 ♥
+            </div>
+
+            <div class="center number">
+                3 ♥
+            </div>
+
+            <div class="bottom">
+                3 ♥
+            </div>
+        </div>
+
+        <!-- 4 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                4 ♥
+            </div>
+
+            <div class="center number">
+                4 ♥
+            </div>
+
+            <div class="bottom">
+                4 ♥
+            </div>
+        </div>
+
+        <!-- 5 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                5 ♥
+            </div>
+
+            <div class="center number">
+                5 ♥
+            </div>
+
+            <div class="bottom">
+                5 ♥
+            </div>
+        </div>
+
+        <!-- 6 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                6 ♥
+            </div>
+
+            <div class="center number">
+                6 ♥
+            </div>
+
+            <div class="bottom">
+                6 ♥
+            </div>
+        </div>
+
+        <!-- 7 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                7 ♥
+            </div>
+
+            <div class="center number">
+                7 ♥
+            </div>
+
+            <div class="bottom">
+                7 ♥
+            </div>
+        </div>
+
+        <!-- 8 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                8 ♥
+            </div>
+
+            <div class="center number">
+                8 ♥
+            </div>
+
+            <div class="bottom">
+                8 ♥
+            </div>
+        </div>
+
+        <!-- 9 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                9 ♥
+            </div>
+
+            <div class="center number">
+                9 ♥
+            </div>
+
+            <div class="bottom">
+                9 ♥
+            </div>
+        </div>
+
+        <!-- 10 de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                10 ♥
+            </div>
+
+            <div class="center number">
+                10 ♥
+            </div>
+
+            <div class="bottom">
+                10 ♥
+            </div>
+        </div>
+
+        <!-- Valet de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                J ♥
+            </div>
+
+            <div class="center figure">
+                J
+            </div>
+
+            <div class="bottom">
+                J ♥
+            </div>
+        </div>
+
+        <!-- Dame de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                Q ♥
+            </div>
+
+            <div class="center figure">
+                Q
+            </div>
+
+            <div class="bottom">
+                Q ♥
+            </div>
+        </div>
+
+        <!-- Roi de cœur -->
+        <div class="card card-front red">
+            <div class="top">
+                K ♥
+            </div>
+
+            <div class="center figure">
+                K
+            </div>
+
+            <div class="bottom">
+                K ♥
+            </div>
+        </div>
+
+        <!-- ===== Cartes de trèfle ===== -->
+        <!-- As de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                A ♣
+            </div>
+
+            <div class="center figure">
+                ♣
+            </div>
+
+            <div class="bottom">
+                A ♣
+            </div>
+        </div>
+
+        <!-- 2 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                2 ♣
+            </div>
+
+            <div class="center number">
+                2 ♣
+            </div>
+
+            <div class="bottom">
+                2 ♣
+            </div>
+        </div>
+
+        <!-- 3 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                3 ♣
+            </div>
+
+            <div class="center number">
+                3 ♣
+            </div>
+
+            <div class="bottom">
+                3 ♣
+            </div>
+        </div>
+
+        <!-- 4 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                4 ♣
+            </div>
+
+            <div class="center number">
+                4 ♣
+            </div>
+
+            <div class="bottom">
+                4 ♣
+            </div>
+        </div>
+
+        <!-- 5 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                5 ♣
+            </div>
+
+            <div class="center number">
+                5 ♣
+            </div>
+
+            <div class="bottom">
+                5 ♣
+            </div>
+        </div>
+
+        <!-- 6 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                6 ♣
+            </div>
+
+            <div class="center number">
+                6 ♣
+            </div>
+
+            <div class="bottom">
+                6 ♣
+            </div>
+        </div>
+
+        <!-- 7 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                7 ♣
+            </div>
+
+            <div class="center number">
+                7 ♣
+            </div>
+
+            <div class="bottom">
+                7 ♣
+            </div>
+        </div>
+
+        <!-- 8 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                8 ♣
+            </div>
+
+            <div class="center number">
+                8 ♣
+            </div>
+
+            <div class="bottom">
+                8 ♣
+            </div>
+        </div>
+
+        <!-- 9 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                9 ♣
+            </div>
+
+            <div class="center number">
+                9 ♣
+            </div>
+
+            <div class="bottom">
+                9 ♣
+            </div>
+        </div>
+
+        <!-- 10 de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                10 ♣
+            </div>
+
+            <div class="center number">
+                10 ♣
+            </div>
+
+            <div class="bottom">
+                10 ♣
+            </div>
+        </div>
+
+        <!-- Valet de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                J ♣
+            </div>
+
+            <div class="center figure">
+                J
+            </div>
+
+            <div class="bottom">
+                J ♣
+            </div>
+        </div>
+
+        <!-- Dame de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                Q ♣
+            </div>
+
+            <div class="center figure">
+                Q
+            </div>
+
+            <div class="bottom">
+                Q ♣
+            </div>
+        </div>
+
+        <!-- Roi de trèfle -->
+        <div class="card card-front black">
+            <div class="top">
+                K ♣
+            </div>
+
+            <div class="center figure">
+                K
+            </div>
+
+            <div class="bottom">
+                K ♣
+            </div>
+        </div>
+
+        <!-- ===== Cartes de carreau ===== -->
+        <!-- As de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                A ♦
+            </div>
+
+            <div class="center figure">
+                ♦
+            </div>
+
+            <div class="bottom">
+                A ♦
+            </div>
+        </div>
+
+        <!-- 2 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                2 ♦
+            </div>
+
+            <div class="center number">
+                2 ♦
+            </div>
+
+            <div class="bottom">
+                2 ♦
+            </div>
+        </div>
+
+        <!-- 3 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                3 ♦
+            </div>
+
+            <div class="center number">
+                3 ♦
+            </div>
+
+            <div class="bottom">
+                3 ♦
+            </div>
+        </div>
+
+        <!-- 4 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                4 ♦
+            </div>
+
+            <div class="center number">
+                4 ♦
+            </div>
+
+            <div class="bottom">
+                4 ♦
+            </div>
+        </div>
+
+        <!-- 5 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                5 ♦
+            </div>
+
+            <div class="center number">
+                5 ♦
+            </div>
+
+            <div class="bottom">
+                5 ♦
+            </div>
+        </div>
+
+        <!-- 6 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                6 ♦
+            </div>
+
+            <div class="center number">
+                6 ♦
+            </div>
+
+            <div class="bottom">
+                6 ♦
+            </div>
+        </div>
+
+        <!-- 7 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                7 ♦
+            </div>
+
+            <div class="center number">
+                7 ♦
+            </div>
+
+            <div class="bottom">
+                7 ♦
+            </div>
+        </div>
+
+        <!-- 8 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                8 ♦
+            </div>
+
+            <div class="center number">
+                8 ♦
+            </div>
+
+            <div class="bottom">
+                8 ♦
+            </div>
+        </div>
+
+        <!-- 9 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                9 ♦
+            </div>
+
+            <div class="center number">
+                9 ♦
+            </div>
+
+            <div class="bottom">
+                9 ♦
+            </div>
+        </div>
+
+        <!-- 10 de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                10 ♦
+            </div>
+
+            <div class="center number">
+                10 ♦
+            </div>
+
+            <div class="bottom">
+                10 ♦
+            </div>
+        </div>
+
+        <!-- Valet de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                J ♦
+            </div>
+
+            <div class="center figure">
+                J
+            </div>
+
+            <div class="bottom">
+                J ♦
+            </div>
+        </div>
+
+        <!-- Dame de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                Q ♦
+            </div>
+
+            <div class="center figure">
+                Q
+            </div>
+
+            <div class="bottom">
+                Q ♦
+            </div>
+        </div>
+
+        <!-- Roi de carreau -->
+        <div class="card card-front red">
+            <div class="top">
+                K ♦
+            </div>
+
+            <div class="center figure">
+                K
+            </div>
+
+            <div class="bottom">
+                K ♦
+            </div>
+        </div>
+
+        <!-- Dos de la carte -->
+        <div class="card card-back"></div>
+
     </div>
-    <div class="card">
-        <div class="top">2 ♠</div>
-        <div class="center number ">2♠</div>
-        <div class="bottom">2 ♠</div>
-    </div>
-    <div class="card">
-        <div class="top">A ♣</div>
-        <div class="center figure">♣</div>
-        <div class="bottom">A ♣</div>
-    </div>
-    <div class="card">
-        <div class="top">7 ♠</div>
-        <div class="center number">7♠</div>
-        <div class="bottom">7 ♠</div>
-    </div>
-    <div class="card red">
-        <div class="top">K ♥</div>
-        <div class="center figure ">K </div>
-        <div class="bottom">K ♥</div>
-    </div>
-     <div class="card red">
-        <div class="top">J ♦</div>
-        <div class="center figure ">J </div>
-        <div class="bottom">J ♦</div>
-    </div>
-    <div class="card card-back"></div>
-</body>    
+
+</body>
+
 </html>

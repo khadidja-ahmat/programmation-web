@@ -1,56 +1,62 @@
 .card {
     width: 120px;
     height: 180px;
+
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
-    /* Flexbox : pour centrer et positionner les elements a linteriieur de la ccarte */
+
+    /* Flexbox : centre le contenu */
     display: flex;
-    /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
 
-    /* Emplacement des coins */
+    /* Permet de placer les coins */
     position: relative;
 }
-/* le centre de la carte */
-.center {
-    font-size: 30px;
-}
+
 /* Coin supérieur gauche */
 .top {
     position: absolute;
     top: 10px;
     left: 10px;
 }
+
+/* Valeur au centre */
+.center {
+    font-size: 40px;
+}
+
 /* Coin inférieur droit */
 .bottom {
     position: absolute;
     bottom: 10px;
     right: 10px;
 
-    /* Rotation */
+    /* Rotation de 180 degrés */
     transform: rotate(180deg);
 }
-/*Partie 3*/
+/*partie 3*/
+/* Couleurs */
 .red {
     color: red;
 }
+
 .black {
     color: black;
 }
 
 /* Pour A, J, Q, K */
 .figure {
-    font-size: 60px;
+    font-size: 80px;
 }
 
 /* Pour les cartes de 2 à 10 */
 .number {
     font-size: 30px;
 }
-
 /* Partie 4*/
+
 /* Face avant */
 .card-front {
     background-color: white;
@@ -75,8 +81,14 @@ body {
 }
 .cards {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: nowrap;
     gap: 10px;
 }
-
+/* Affichage de tout le jeu : les cartes passent à la ligne */
+.jeu {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
