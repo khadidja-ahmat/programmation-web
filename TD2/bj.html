@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Jeu de Blackjack</h1>
+
+    <p id="balance"></p>
+    <label for="bet">Votre mise :</label>
+    <input type="number" id="bet" min="1" value="10">
+    <button id="bet-button">Miser et distribuer</button>
+
+    <h2>Main du croupier :</h2>
+    <div id="dealer-hand" class="cards"></div>
+    <p id="dealer-total"></p>
+
+    <h2>Votre main :</h2>
+    <div id="player-hand" class="cards"></div>
+    <p id="player-total"></p>
+
+    <button id="draw" disabled>Tirer une carte</button>
+    <button id="stop" disabled>Arrêter</button>
+    <button id="replay" disabled>Rejouer</button>
+
+    <p id="message"></p>
+  </body>
+</html>
