@@ -6,7 +6,7 @@ Mes travaux dirigés de **programmation web** en HTML, CSS et JavaScript pur, sa
 
 | Dossier | Sujet | Notions |
 |---|---|---|
-| [`TD0`](TD0) / [`TD1`](TD1) | Cartes à jouer en HTML et CSS | Structure HTML, Flexbox, rotation (`transform`), couleurs et tailles par classes, dos de carte en `conic-gradient` |
+| [`TD0`](TD0) / [`TD1`](TD1) | Jeu de 52 cartes en HTML et CSS | Structure HTML, Flexbox, rotation (`transform`), couleurs et tailles par classes, dos de carte en `conic-gradient` |
 | [`TD2`](TD2) | **Jeu de Blackjack** | JavaScript : DOM, événements, paquet de 52 cartes, valeur de l'as (1 ou 11), mise et solde, croupier |
 | [`TD3`](TD3) | **Application météo (Single-Page Application)** | JavaScript : `fetch`, API REST (Open-Meteo), carte interactive (Leaflet), clic sur la carte pour choisir un lieu |
 
@@ -19,7 +19,7 @@ Mes travaux dirigés de **programmation web** en HTML, CSS et JavaScript pur, sa
 
 Il suffit d'ouvrir le fichier HTML dans un navigateur :
 
-- `TD0/index.html` et `TD0/acceuil.html`
+- `TD0/index.html` 
 - `TD1/index.html`
 - `TD2/bj.html`
 - `TD3/index.html` (nécessite une connexion internet)
