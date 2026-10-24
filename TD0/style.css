@@ -85,3 +85,10 @@ body {
     flex-wrap: nowrap;
     gap: 10px;
 }
+/* Affichage de tout le jeu : les cartes passent à la ligne */
+.jeu {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation web : mes TD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 16px;
+            line-height: 1.5;
+            color: #222;
+            background: #fff;
+        }
+        h1 { margin-bottom: 4px; }
+        .sous-titre { color: #555; margin-top: 0; }
+        ul { list-style: none; padding: 0; }
+        li {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+        li a { font-weight: bold; font-size: 18px; }
+        li p { margin: 4px 0 0; color: #555; }
+        footer { margin-top: 32px; font-size: 14px; color: #555; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #111; color: #eee; }
+            .sous-titre, li p, footer { color: #aaa; }
+            li { border-color: #444; }
+            a { color: #7ab7ff; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Programmation web</h1>
+    <p class="sous-titre">Mes travaux dirigés en HTML, CSS et JavaScript (Master 1 Génie logiciel, Université de Bordeaux).</p>
+
+    <ul>
+        <li>
+            <a href="TD0/index.html">TD0 : jeu de 52 cartes</a>
+            <p>Les 52 cartes du jeu en HTML et CSS, avec le dos de la carte.</p>
+        </li>
+        <li>
+            <a href="TD1/index.html">TD1 : cartes à jouer</a>
+            <p>Mise en forme des cartes avec Flexbox, rotation et dos en <code>conic-gradient</code>.</p>
+        </li>
+        <li>
+            <a href="TD2/bj.html">TD2 : jeu de Blackjack</a>
+            <p>JavaScript : mise, tirage des cartes, croupier, solde.</p>
+        </li>
+        <li>
+            <a href="TD3/index.html">TD3 : application météo</a>
+            <p>Recherche d'une ville ou clic sur la carte pour afficher la météo et les prévisions.</p>
+        </li>
+    </ul>
+
+    <footer>Code source sur <a href="https://github.com/khadidja-ahmat/programmation-web">GitHub</a>.</footer>
+</body>
+</html>

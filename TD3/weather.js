@@ -42,8 +42,19 @@ function fetchJson(url) {
     });
 }
 
+// Protège la page : transforme les caractères spéciaux du texte en texte simple
+function echapperHtml(texte) {
+    const div = document.createElement("div");
+    div.textContent = texte;
+    return div.innerHTML;
+}
+
+// textContent affiche le message comme du texte, jamais comme du code HTML
 function afficherErreur(message) {
-    dataDiv.innerHTML = `<p class="erreur">${message}</p>`;
+    const p = document.createElement("p");
+    p.className = "erreur";
+    p.textContent = message;
+    dataDiv.replaceChildren(p);
 }
 
 // Affiche la météo d'un endroit grâce à sa latitude et sa longitude
@@ -80,7 +91,7 @@ function afficherMeteo(lat, lon, nomLieu) {
             // On met tout dans la page
             dataDiv.innerHTML = `
                 <div class="actuel">
-                    <h2>${nomLieu}</h2>
+                    <h2>${echapperHtml(nomLieu)}</h2>
                     <div><span class="gros">${emoji} ${actuel.temperature}°C</span></div>
                     <p>${texte}</p>
                     <p>Vent : ${actuel.windspeed} km/h</p>
