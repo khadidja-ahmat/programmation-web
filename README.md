@@ -1,5 +1,7 @@
 # Programmation web : travaux dirigés
 
+🎮 **Démo en ligne : https://khadidja-ahmat.github.io/programmation-web/**
+
 Mes travaux dirigés de **programmation web** en HTML, CSS et JavaScript pur, sans framework.
 
 ## Contenu
@@ -12,7 +14,7 @@ Mes travaux dirigés de **programmation web** en HTML, CSS et JavaScript pur, sa
 
 ## Les TD les plus complets
 
-- **Blackjack (`TD2`)** : le joueur mise, tire des cartes ou s'arrête, puis le croupier joue. Le solde est mis à jour à chaque partie. Les cartes sont celles créées en HTML/CSS aux TD précédents.
+- **Blackjack (`TD2`)** : le joueur mise, tire des cartes ou s'arrête, puis le croupier joue. Le solde est mis à jour à chaque partie. Les cartes sont celles créées en HTML/CSS aux TD1.
 - **Météo (`TD3`)** : on cherche une ville ou on clique sur la carte pour afficher la météo actuelle et les prévisions des jours suivants. Les API utilisées (Open-Meteo, BigDataCloud) ne demandent aucune clé.
 
 ## Lancer un TD
