@@ -1,0 +1,60 @@
+### Default URL
+GET http://localhost:5000/
+
+### Default API URL
+GET http://localhost:5000/api/
+
+
+### Créer un utilisateur
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "azerty123"
+}
+
+### Se connecter : on récupère le token
+# @name login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "azerty123"
+}
+
+### Sans token : doit répondre 401
+GET http://localhost:5000/api/contacts
+
+
+### Tous les contacts
+GET http://localhost:5000/api/contacts
+Authorization: Bearer {{login.response.body.token}}
+
+### Un contact 
+GET http://localhost:5000/api/contacts/6adcac73cd3489bfd1eb7b52
+Authorization: Bearer {{login.response.body.token}}
+
+### Créer un contact
+POST http://localhost:5000/api/contacts
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
+{
+  "name": "tete",
+  "age": 30
+}
+
+### Modifier un contact 
+PUT http://localhost:5000/api/contacts/6adcac73cd3489bfd1eb7b52
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
+{
+  "age": 31
+}
+
+### Supprimer un contact
+DELETE http://localhost:5000/api/contacts/6adcac73cd3489bfd1eb7b53
+Authorization: Bearer {{login.response.body.token}}
