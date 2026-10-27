@@ -1,0 +1,26 @@
+### Page d'accueil
+GET http://localhost:8080/
+
+### Page utilisateur 
+GET http://localhost:8080/user/khadidja
+
+### Lister tous les contacts
+GET http://localhost:8080/contacts
+
+### Obtenir un contact 
+GET http://localhost:8080/contacts/6adcac73cd3489bfd1eb7b52
+
+### Ajouter un contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{ "name": "alice", "age": 30 }
+
+### Modifier un contact 
+PUT http://localhost:8080/contacts/6ae0b7907b557e9dc6c414c2
+Content-Type: application/json
+
+{ "name": "toto", "age": 25 }
+
+### Supprimer un contact (le second tata, un doublon)
+DELETE http://localhost:8080/contacts/6ae0b7907b557e9dc6c414c5
