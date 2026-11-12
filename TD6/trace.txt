@@ -1,0 +1,69 @@
+TD6 - Docker (Podman au CREMI)
+
+0. Préparation
+Au CREMI, docker demande des droits élevés (risque sur des machines partagées), donc on utilise podman. Je définis 4 alias (docker=podman, avec --root=$TMPDIR/containers). Ils sont à refaire dans chaque nouveau terminal.
+
+1. Application minimaliste
+Commande : npm start
+Résultat : « Server is running on port 80 » puis le programme s'arrête.
+Ce que j'ai compris : le serveur n'a pas démarré. Le port 80 est réservé (< 1024) et refusé à un utilisateur normal (EACCES) ;
+Express 5 affiche quand même le message de succès. D'où le conteneur.
+
+2. Construire l'image
+Commande : docker build -t web .
+Résultat : image localhost/web créée.
+Ce que j'ai compris: une image est un modèle figé (Node + mon code + dépendances). Chaque ligne du Dockerfile fait une couche. 
+On copie package*.json et on fait npm install AVANT de copier le code : si je change seulement le code, le cache évite de refaire npm install. 
+Il vaut mieux écrire le nom complet docker.io/library/node:23-alpine avec un tag.
+
+3. .dockerignore
+Commande : fichier .dockerignore (node_modules, .git, .env, .vscode), puis docker build -t web .
+Résultat : étapes 2 à 4 « Using cache » ; image de 175 MB à 172 MB (node:23-alpine seul : 165 MB).
+Ce que j'ai compris : au build, tout le dossier est envoyé au moteur ; 
+le .dockerignore exclut le superflu (comme un .gitignore).
+
+4. Lancer un conteneur
+Commandes : docker run -d -p 8090:80 web ; docker ps ; curl http://localhost:8090/; docker logs <nom du conteneur>.
+Résultat : conteneur « Up », curl répond « Bonjour ! », les logs montrent « Server is running on port 80 ».
+Ce que j'ai compris : un conteneur est une instance qui tourne à partir de l'image. -p 8090:80 relie le port 8090 
+de ma machine au port 80 du conteneur. Dans le conteneur, je suis root, donc le port 80 fonctionne.
+
+5. Modifier l'application
+Question du sujet : comment redéployer après un changement de code ?
+Réponse : docker stop <conteneur> ; docker build -t web . ; docker run -d -p 8090:80 web
+Test : après avoir changé « Bonjour » en « Hello », le conteneur répondait encore « Bonjour ! » tant que je n'avais pas reconstruit : l'image est immuable.
+Il faut arrêter l'ancien conteneur avant, sinon le port 8090 est déjà pris.
+
+6. Partager
+Deux façons : 
+(1) un dépôt d'images (Docker Hub) avec docker push / docker pull et des tags de version (v1.0, latest) ; 
+(2) donner le code source + le Dockerfile (par exemple dans Git), chacun construit l'image.
+Test : docker pull alpine ; docker run -it --rm alpine /bin/sh. 
+Dans le conteneur : whoami = root, Alpine Linux 3.24. --rm supprime le conteneur à la sortie.
+
+7. Gestion des données
+
+7.0 Sans rien de spécial : modifier un fichier dans un conteneur, puis le recréer.
+Commandes : docker run -d -p 8090:80 --name tdweb web ; docker exec -it tdweb /bin/sh ; 
+sed -i 's/Hello/Salut/' /app/src/index.js ; exit ; curl http://localhost:8090/
+Résultat : curl répond « Salut ! ». Puis : docker stop tdweb ; docker rm tdweb ;
+docker run -d -p 8090:80 --name tdweb web ; curl répond de nouveau « Hello ! ».
+Ce que j'ai compris : les modifications faites dans un conteneur sont écrites dans une couche jetable,
+elles disparaissent si on supprime le conteneur (il repart de l'image).
+
+7.1 Bind mount : docker run -d -p 8090:80 --name tdweb -v $(pwd)/src:/app/src web
+- Je change src/index.js sur ma machine : curl montre le changement tout de suite (« Coucou ! »).
+- Je change le fichier depuis le conteneur (docker exec) : cat src/index.js sur ma machine montre le changement (« Hi ! »).
+Ce que j'ai compris : c'est le même dossier vu des deux côtés, donc ça marche dans les deux sens. Pratique en développement.
+
+7.2 Volume : expérience pour vérifier qu'il garde les données
+docker volume create mon_volume
+docker run --rm -v mon_volume:/data alpine sh -c "echo bonjour > /data/test.txt"
+docker run --rm -v mon_volume:/data alpine cat /data/test.txt   -> affiche « bonjour »
+docker volume ls ; docker volume inspect mon_volume
+Ce que j'ai compris : le fichier a survécu à la suppression du premier conteneur. Le volume est géré par Podman (emplacement dans /tmp/cache-.../volumes/..., pas dans mon dossier) et se réutilise par son nom.
+
+Conclusion
+- Image = modèle figé ; conteneur = instance. Changer le code demande de reconstruire l'image.
+- Ce qu'on modifie dans un conteneur est perdu si on le supprime.
+- Pour garder ou partager des fichiers : bind mount (dossier de ma machine, pratique pour développer) ou volume (géré par Docker, pour les données à conserver).
